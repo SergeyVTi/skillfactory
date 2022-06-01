@@ -1,12 +1,4 @@
 #pragma once
-#include <string>
-#include <iostream>
-#include <vector>
-#include "DomesticAppliances.h"
-#include "Mobile.h"
-#include "VacuumCleaner.h"
-
-using namespace std;
 
 class IElectronics {
 public:
@@ -17,6 +9,3 @@ public:
 protected:
 	int price_;
 };
-
-
-
