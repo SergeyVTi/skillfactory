@@ -12,9 +12,7 @@ int main() {
 
 	cout << endl << "1) Создаем контейнер(10) и выводим на экран" << endl;
 	try {
-		IntegerArray intArray(10);
-		for (int i = 0; i < intArray.getLength(); ++i)
-			intArray[i] = i + 1;
+		IntegerArray intArray(10);	
 		cout << intArray << endl;
 	}
 	catch (const exception& e) {
@@ -32,8 +30,6 @@ int main() {
 	cout << endl << "3) Копируем контейнер1(5) в контейнер2(10)" << endl;
 	try {
 		IntegerArray intArray1(5), intArray2(10);
-		for (int i = 0; i < intArray1.getLength(); ++i)
-			intArray1[i] = i + 1;
 		intArray2 = intArray1;
 		cout << intArray2 << endl;
 	}
@@ -44,8 +40,6 @@ int main() {
 	cout << endl << "4) Копируем контейнер1(10) в контейнер2(5)" << endl;
 	try {
 		IntegerArray intArray1(10), intArray2(5);
-		for (int i = 0; i < intArray1.getLength(); ++i)
-			intArray1[i] = i + 1;
 		intArray2 = intArray1;
 		cout << intArray2 << endl;
 	}
@@ -56,8 +50,6 @@ int main() {
 	cout << endl << "5) Получаем доступ к элементу контейнера(10) по индексу 9" << endl;
 	try {
 		IntegerArray intArray(10);
-		for (int i = 0; i < intArray.getLength(); ++i)
-			intArray[i] = i + 1;
 		cout << "intArray[9] = " << intArray[9] << endl;
 	}
 	catch (const exception& e) {
@@ -67,8 +59,6 @@ int main() {
 	cout << endl << "6) Получаем доступ к элементу контейнера(10) по индексу 10" << endl;
 	try {
 		IntegerArray intArray(10);
-		for (int i = 0; i < intArray.getLength(); ++i)
-			intArray[i] = i + 1;
 		cout << "intArray[10] = " << intArray[10] << endl;
 	}
 	catch (const exception& e) {
@@ -78,8 +68,6 @@ int main() {
 	cout << endl << "7) Изменяем размер контейнера(10) на 5" << endl;
 	try {
 		IntegerArray intArray(10);
-		for (int i = 0; i < intArray.getLength(); ++i)
-			intArray[i] = i + 1;
 		cout << intArray << endl;
 		cout << intArray.resize(5) << endl;
 	}
@@ -90,8 +78,6 @@ int main() {
 	cout << endl << "8) Изменяем размер контейнера(10) на 15" << endl;
 	try {
 		IntegerArray intArray(10);
-		for (int i = 0; i < intArray.getLength(); ++i)
-			intArray[i] = i + 1;
 		cout << intArray << endl;
 		cout << intArray.resize(15) << endl;
 	}
@@ -102,8 +88,6 @@ int main() {
 	cout << endl << "9) Изменяем размер контейнера(10) на 0" << endl;
 	try {
 		IntegerArray intArray(10);
-		for (int i = 0; i < intArray.getLength(); ++i)
-			intArray[i] = i + 1;
 		cout << intArray << endl;
 		cout << intArray.resize(0) << endl;
 	}
@@ -114,8 +98,6 @@ int main() {
 	cout << endl << "10) Вставляем элемент 999 в контейнер(10) по индексу 6" << endl;
 	try {
 		IntegerArray intArray(10);
-		for (int i = 0; i < intArray.getLength(); ++i)
-			intArray[i] = i + 1;
 		cout << intArray << endl;
 		cout << intArray.insertBefore(999, 6) << endl;
 	}
@@ -126,8 +108,6 @@ int main() {
 	cout << endl << "11) Вставляем элемент 999 в контейнер(10) по индексу 15" << endl;
 	try {
 		IntegerArray intArray(10);
-		for (int i = 0; i < intArray.getLength(); ++i)
-			intArray[i] = i + 1;
 		cout << intArray << endl;
 		cout << intArray.insertBefore(999, 15) << endl;
 	}
@@ -138,8 +118,6 @@ int main() {
 	cout << endl << "12) Удаляем элемент из контейнера(10) по индексу 6" << endl;
 	try {
 		IntegerArray intArray(10);
-		for (int i = 0; i < intArray.getLength(); ++i)
-			intArray[i] = i + 1;
 		cout << intArray << endl;
 		cout << intArray.deleteVal(6) << endl;
 	}
@@ -150,8 +128,6 @@ int main() {
 	cout << endl << "13) Удаляем элемент из контейнера(10) по индексу 10" << endl;
 	try {
 		IntegerArray intArray(10);
-		for (int i = 0; i < intArray.getLength(); ++i)
-			intArray[i] = i + 1;
 		cout << intArray << endl;
 		cout << intArray.deleteVal(10) << endl;
 	}
@@ -162,8 +138,6 @@ int main() {
 	cout << endl << "14) Вставляем элемент 999 в начало контейнера(10)" << endl;
 	try {
 		IntegerArray intArray(10);
-		for (int i = 0; i < intArray.getLength(); ++i)
-			intArray[i] = i + 1;
 		cout << intArray << endl;
 		cout << intArray.insertAtBeginning(999) << endl;
 	}
@@ -174,8 +148,6 @@ int main() {
 	cout << endl << "15) Вставляем элемент 999 в конец контейнера(10)" << endl;
 	try {
 		IntegerArray intArray(10);
-		for (int i = 0; i < intArray.getLength(); ++i)
-			intArray[i] = i + 1;
 		cout << intArray << endl;
 		cout << intArray.insertAtEnd(999) << endl;
 	}
@@ -186,8 +158,6 @@ int main() {
 	cout << endl << "16) Ищем элемент 5 в контейнере(10)" << endl;
 	try {
 		IntegerArray intArray(10);
-		for (int i = 0; i < intArray.getLength(); ++i)
-			intArray[i] = i + 1;
 		cout << intArray << endl
 			<< "intArray[" << intArray.searchVal(5) << "] = " <<
 			intArray[intArray.searchVal(5)] << endl;		

@@ -8,6 +8,8 @@ IntegerArray::IntegerArray(int length) : length_(length) {
 	dataPtr_ = new int[length_] {};
 	cout << "Array allocated" << endl;
 
+	for (int i = 0; i < length_; ++i)
+		dataPtr_[i] = i;
 }
 
 IntegerArray::~IntegerArray() {

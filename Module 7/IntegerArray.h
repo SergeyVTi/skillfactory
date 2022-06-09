@@ -22,7 +22,7 @@ public:
 
 protected:
 	int length_{};
-	int* dataPtr_{};
+	int* dataPtr_{};	
 };
 
 
