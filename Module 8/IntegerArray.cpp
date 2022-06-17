@@ -1,32 +1,36 @@
 ﻿#include "IntegerArray.h"
 
-IntegerArray::IntegerArray(int length) : length_(length) {
+template <typename T>
+IntegerArray<T>::IntegerArray(int length) : length_(length) {
 	cout << "Allocating array" << endl;
 	if (length_ <= 0) {
 		throw Bad_length();
 	}
-	dataPtr_ = new int[length_] {};
+	dataPtr_ = new T[length_] {};
 	cout << "Array allocated" << endl;
 
-	for (int i = 0; i < length_; ++i)
-		dataPtr_[i] = i;
+	for (double i = 0.1; i < length_; ++i)
+		dataPtr_[static_cast<int>(i)] = i;
 }
 
-IntegerArray::~IntegerArray() {
+template <typename T>
+IntegerArray<T>::~IntegerArray() {
 	cout << "Deleting array" << endl;
 	delete[] dataPtr_;
 	dataPtr_ = nullptr;
 	cout << "Array destructed" << endl;
 }
 
-int& IntegerArray::operator[](int index) {
+template <typename T>
+T& IntegerArray<T>::operator[](int index) {
 	if (index >= 0 && index < length_) {
 		return dataPtr_[index];
 	}
 	throw Bad_range();
 }
 
-IntegerArray& IntegerArray::operator=(const IntegerArray& other) {
+template <typename T>
+IntegerArray<T>& IntegerArray<T>::operator=(const IntegerArray<T>& other) {
 	if (this == &other)
 		return *this;
 
@@ -37,7 +41,8 @@ IntegerArray& IntegerArray::operator=(const IntegerArray& other) {
 	return *this;
 }
 
-IntegerArray& IntegerArray::resize(int newLength) {
+template <typename T>
+IntegerArray<T>& IntegerArray<T>::resize(int newLength) {
 	if (newLength == length_)
 		return *this;
 
@@ -57,7 +62,8 @@ IntegerArray& IntegerArray::resize(int newLength) {
 	return *this;
 }
 
-IntegerArray& IntegerArray::insertBefore(int value, int index) {
+template <typename T>
+IntegerArray<T>& IntegerArray<T>::insertBefore(T value, int index) {
 	if (index < 0 || index > length_)
 		throw Bad_range();
 
@@ -76,7 +82,8 @@ IntegerArray& IntegerArray::insertBefore(int value, int index) {
 	return *this;
 }
 
-IntegerArray& IntegerArray::deleteVal(int index) {
+template <typename T>
+IntegerArray<T>& IntegerArray<T>::deleteVal(int index) {
 	if (index < 0 || index > length_ - 1)
 		throw Bad_range();
 
@@ -97,23 +104,30 @@ IntegerArray& IntegerArray::deleteVal(int index) {
 	return *this;
 }
 
-IntegerArray& IntegerArray::insertAtBeginning(int value) {
+template <typename T>
+IntegerArray<T>& IntegerArray<T>::insertAtBeginning(T value) {
 	insertBefore(value, 0);
 	return *this;
 }
 
-IntegerArray& IntegerArray::insertAtEnd(int value) {
+template <typename T>
+IntegerArray<T>& IntegerArray<T>::insertAtEnd(T value) {
 	insertBefore(value, length_);
 	return *this;
 }
 
-int IntegerArray::searchVal(int value) {
+template <typename T>
+int IntegerArray<T>::searchVal(T value) {
 	for (int i = 0; i < length_; ++i)
 		if (*(this->dataPtr_ + i) == value)
 			return i;
 	return -1;
 }
 
-int IntegerArray::getLength() const {
+template <typename T>
+int IntegerArray<T>::getLength() const {
 	return length_;
 }
+
+template class IntegerArray<int>;
+template class IntegerArray<double>;
